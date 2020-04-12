@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Text Editor</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://kit.fontawesome.com/cf12baeda6.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="enableEditMode();">
+  <div class="sticky">
+    <button onclick="execCmd('bold');">
+      <i class="fa fa-bold"></i>
+    </button>
+    <button onclick="execCmd('italic');">
+      <i class="fa fa-italic"></i>
+    </button>
+    <button onclick="execCmd('underline');">
+      <i class="fa fa-underline"></i>
+    </button>
+    <button onclick="execCmd('strikeThrough');">
+      <i class="fa fa-strikethrough"></i>
+    </button>
+    <button onclick="execCmd('justifyLeft');">
+      <i class="fa fa-align-left"></i>
+    </button>
+    <button onclick="execCmd('justifyCenter');">
+      <i class="fa fa-align-center"></i>
+    </button>
+    <button onclick="execCmd('justifyRight');">
+      <i class="fa fa-align-right"></i>
+    </button>
+    <button onclick="execCmd('justifyFull');">
+      <i class="fa fa-align-justify"></i>
+    </button>
+    <button onclick="execCmd('cut');">
+      <i class="fa fa-cut"></i>
+    </button>
+    <button onclick="execCmd('copy');">
+      <i class="fa fa-copy"></i>
+    </button>
+    <button onclick="execCmd('indent');">
+      <i class="fa fa-indent"></i>
+    </button>
+    <button onclick="execCmd('outdent');">
+      <i class="fa fa-outdent"></i>
+    </button>
+    <button onclick="execCmd('subscript');">
+      <i class="fa fa-subscript"></i>
+    </button>
+    <button onclick="execCmd('superscript');">
+      <i class="fa fa-superscript"></i>
+    </button>
+    <button onclick="execCmd('undo');">
+      <i class="fa fa-undo"></i>
+    </button>
+    <button onclick="execCmd('redo');">
+      <i class="fa fa-redo"></i>
+    </button>
+    <button onclick="execCmd('insertUnorderedList');">
+      <i class="fa fa-list-ul"></i>
+    </button>
+    <button onclick="execCmd('insertOrderedList');">
+      <i class="fa fa-list-ol"></i>
+    </button>
+    <button onclick="execCmd('insertParagraph');">
+      <i class="fa fa-paragraph"></i>
+    </button>
+    <select onchange="execCommandWithArg('formatBlock',this.value);">
+      <option value="H1">H1</option>
+      <option value="H2">H2</option>
+      <option value="H3">H3</option>
+      <option value="H4">H4</option>
+      <option value="H5">H5</option>
+      <option value="H6">H6</option>
+    </select>
+
+    <button onclick="execCmd('insertHorizontalRule');">
+      <i class="fa ">HR</i>
+    </button>
+    <button onclick="execCmd('createLink',prompt('Enter the URL','http://'));">
+      <i class="fa fa-link"></i>
+    </button>
+    <button onclick="execCmd('unlink');">
+      <i class="fa fa-unlink"></i>
+    </button>
+    <button onclick="toggleSource();">
+      <i class="fa fa-code"></i>
+    </button>
+    <button onclick="toggleEdit();">
+      <i class="">Toggle Edit</i>
+    </button>
+
+    <br />
+
+    <select onchange="ececCommandWithArg('fontName',this.value)">
+      <option value="Arial">Arial</option>
+      <option value="Arial">Arial</option>
+      <option value="Arial">Arial</option>
+      <option value="Arial">Arial</option>
+      <option value="Arial">Arial</option>
+      <option value="Arial">Arial</option>
+    </select>
+
+    <select onchange="execCommandWithArg('fontSize',this.value);">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+    </select>
+    Text Colour: <input style="margin-top: 9px;" type="color" onchange="execCommandWithArg('foreColor',this.value);" />
+    Hilite Text: <input style="margin-top: 9px;" type="color"
+      onchange="execCommandWithArg('hiliteColor',this.value);" />
+    <button onclick="execCmd('selectAll');">Select All</button>
+    <hr>
+    <hr>
+
+  </div>
+  <hr>
+  <iframe class="iframe" name="richTextField" src="./iframe.html"
+    style="width:-webkit-fill-available; height:-webkit-fill-available; word-wrap: break-word;">
+  </iframe>
+</body>
+<script src="./utils.js"></script>
+
+</html>

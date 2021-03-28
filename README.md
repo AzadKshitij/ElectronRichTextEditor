@@ -9,7 +9,7 @@ Download [node.js](https://nodejs.org/en/download/) on your maschine.
 In CMD run the command
 
 ```bash
-git cloan "https://github.com/AzadKshitij/Electron_screen_recorder.git"
+git clone "https://github.com/AzadKshitij/Electron_screen_recorder.git"
 npm install electron
 npm start
 ```
